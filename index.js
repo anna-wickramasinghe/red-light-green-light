@@ -8,12 +8,10 @@ function toggleLight(){
     if (isGreen==1){
         document.querySelector("h1").innerHTML="🟢Green Light";
         document.querySelector("p").innerHTML="Run";
-        document.querySelector("button").innerHTML="Click to Stop";
     }
     else{
         document.querySelector("h1").innerHTML="🔴Red Light";
         document.querySelector("p").innerHTML="HOLD";
-        document.querySelector("button").innerHTML="Click to Move";
     }
     setTimeout(toggleLight, randomSeconds*1000)
 
@@ -27,8 +25,11 @@ document.getElementById("movePlayer").addEventListener("click", function(){
     toggleRunning = !toggleRunning;
     if(toggleRunning){
         document.querySelector(".imgPlayer").setAttribute("src","./images/run.gif");
+        document.getElementById("movePlayer").innerHTML="Click to Stop";
+        
     } else {
         document.querySelector(".imgPlayer").setAttribute("src","./images/stand.png");
+        document.getElementById("movePlayer").innerHTML="Click to Move";
     }
 
 });
